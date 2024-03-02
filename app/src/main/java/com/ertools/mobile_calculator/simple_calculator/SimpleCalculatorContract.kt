@@ -1,6 +1,6 @@
-package com.ertools.mobile_calculator.sample_calculator
+package com.ertools.mobile_calculator.simple_calculator
 
-interface SampleCalculatorContract {
+interface SimpleCalculatorContract {
     interface Model {
 
     }

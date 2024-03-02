@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:rowCount="7"
+    android:columnCount="4"
+    android:background="@color/light_theme_background"
+    tools:context=".simple_calculator.SimpleCalculatorActivity">
+
+    <TextView
+        android:id="@+id/simple_result"
+        android:layout_width="wrap_content"
+        android:layout_row="0"
+        android:layout_column="0"
+        android:layout_columnWeight="4"
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="4"
+        android:layout_gravity="fill"
+        android:layout_margin="1dp"
+        android:fontFamily="monospace"
+        android:text="@string/calculator_result"
+        android:textColor="@color/design_default_color_primary"
+        android:textSize="60sp" />
+
+    <!-- First row -->
+    <Button
+        android:id="@+id/simple_clear"
+        android:layout_width="wrap_content"
+        android:layout_row="1"
+        android:layout_column="0"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_gravity="fill"
+        android:layout_margin="1dp"
+        android:background="@drawable/rectangle_button"
+        android:fontFamily="monospace"
+        android:text="@string/calculator_clear"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/simple_sign"
+        android:layout_row="1"
+        android:layout_column="1"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_gravity="fill"
+        android:layout_margin="1dp"
+        android:background="@drawable/rectangle_button"
+        android:fontFamily="monospace"
+        android:text="@string/calculator_sign"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/simple_percent"
+        android:layout_row="1"
+        android:layout_column="2"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_gravity="fill"
+        android:layout_margin="1dp"
+        android:background="@drawable/rectangle_button"
+        android:fontFamily="monospace"
+        android:text="@string/calculator_percent"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/simple_divide"
+        android:layout_row="1"
+        android:layout_column="3"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_gravity="fill"
+        android:layout_margin="1dp"
+        android:background="@drawable/rectangle_button"
+        android:fontFamily="monospace"
+        android:text="@string/calculator_divide"
+        android:textSize="30sp" />
+
+
+    <!-- Second row -->
+    <Button
+        android:id="@+id/simple_seven"
+        android:layout_row="2"
+        android:layout_column="0"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_gravity="fill"
+        android:layout_margin="1dp"
+        android:background="@drawable/rectangle_button"
+        android:fontFamily="monospace"
+        android:text="@string/calculator_seven"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/simple_eight"
+        android:layout_row="2"
+        android:layout_column="1"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_gravity="fill"
+        android:layout_margin="1dp"
+        android:background="@drawable/rectangle_button"
+        android:fontFamily="monospace"
+        android:text="@string/calculator_eight"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/simple_nine"
+        android:layout_row="2"
+        android:layout_column="2"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_gravity="fill"
+        android:layout_margin="1dp"
+        android:background="@drawable/rectangle_button"
+        android:fontFamily="monospace"
+        android:text="@string/calculator_nine"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/simple_multiply"
+        android:layout_row="2"
+        android:layout_column="3"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_gravity="fill"
+        android:layout_margin="1dp"
+        android:background="@drawable/rectangle_button"
+        android:fontFamily="monospace"
+        android:text="@string/calculator_multiply"
+        android:textSize="30sp" />
+
+    <!-- Third row -->
+    <Button
+        android:id="@+id/simple_four"
+        android:layout_row="3"
+        android:layout_column="0"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_gravity="fill"
+        android:layout_margin="1dp"
+        android:background="@drawable/rectangle_button"
+        android:fontFamily="monospace"
+        android:text="@string/calculator_four"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/simple_five"
+        android:layout_row="3"
+        android:layout_column="1"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_gravity="fill"
+        android:layout_margin="1dp"
+        android:background="@drawable/rectangle_button"
+        android:fontFamily="monospace"
+        android:text="@string/calculator_five"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/simple_six"
+        android:layout_row="3"
+        android:layout_column="2"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_gravity="fill"
+        android:layout_margin="1dp"
+        android:background="@drawable/rectangle_button"
+        android:fontFamily="monospace"
+        android:text="@string/calculator_six"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/simple_minus"
+        android:layout_row="3"
+        android:layout_column="3"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_gravity="fill"
+        android:layout_margin="1dp"
+        android:background="@drawable/rectangle_button"
+        android:fontFamily="monospace"
+        android:text="@string/calculator_minus"
+        android:textSize="30sp" />
+
+    <!-- Fourth row -->
+    <Button
+        android:id="@+id/simple_one"
+        android:layout_row="4"
+        android:layout_column="0"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_gravity="fill"
+        android:layout_margin="1dp"
+        android:background="@drawable/rectangle_button"
+        android:fontFamily="monospace"
+        android:text="@string/calculator_one"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/simple_two"
+        android:layout_row="4"
+        android:layout_column="1"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_gravity="fill"
+        android:layout_margin="1dp"
+        android:background="@drawable/rectangle_button"
+        android:fontFamily="monospace"
+        android:text="@string/calculator_two"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/simple_three"
+        android:layout_row="4"
+        android:layout_column="2"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_gravity="fill"
+        android:layout_margin="1dp"
+        android:background="@drawable/rectangle_button"
+        android:fontFamily="monospace"
+        android:text="@string/calculator_three"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/simple_plus"
+        android:layout_row="4"
+        android:layout_column="3"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_gravity="fill"
+        android:layout_margin="1dp"
+        android:background="@drawable/rectangle_button"
+        android:fontFamily="monospace"
+        android:text="@string/calculator_plus"
+        android:textSize="30sp" />
+
+    <!-- Fifth row -->
+    <Button
+        android:id="@+id/simple_zero"
+        android:layout_row="5"
+        android:layout_column="0"
+        android:layout_columnWeight="2"
+        android:layout_columnSpan="2"
+        android:layout_rowWeight="1"
+        android:layout_gravity="fill"
+        android:layout_margin="1dp"
+        android:background="@drawable/rectangle_button"
+        android:fontFamily="monospace"
+        android:text="@string/calculator_zero"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/simple_point"
+        android:layout_row="5"
+        android:layout_column="2"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_gravity="fill"
+        android:layout_margin="1dp"
+        android:background="@drawable/rectangle_button"
+        android:fontFamily="monospace"
+        android:text="@string/calculator_point"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/simple_equal"
+        android:layout_row="5"
+        android:layout_column="3"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_gravity="fill"
+        android:layout_margin="1dp"
+        android:background="@drawable/rectangle_button"
+        android:fontFamily="monospace"
+        android:text="@string/calculator_equal"
+        android:textSize="30sp" />
+
+    <!-- Sixth row -->
+    <Space
+        android:layout_row="6"
+        android:layout_column="0"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="4"
+        android:layout_gravity="fill"
+        android:layout_margin="1dp" />
+</GridLayout>

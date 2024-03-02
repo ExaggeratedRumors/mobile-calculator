@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">mobile-calculator</string>
+    <string name="app_title">Mobile Calculator</string>
+    <string name="simple_calculator">Simple Calculator</string>
+    <string name="scientific_calculator">Scientific Calculator</string>
+    <string name="credits">About me</string>
+    <string name="exit">Exit</string>
+    <string name="calculator_result">0</string>
+    <string name="calculator_clear">C</string>
+    <string name="calculator_sign">⁺∕₋</string>
+    <string name="calculator_percent">%</string>
+    <string name="calculator_divide">÷</string>
+    <string name="calculator_seven">7</string>
+    <string name="calculator_eight">8</string>
+    <string name="calculator_nine">9</string>
+    <string name="calculator_four">4</string>
+    <string name="calculator_five">5</string>
+    <string name="calculator_six">6</string>
+    <string name="calculator_multiply">x</string>
+    <string name="calculator_minus">-</string>
+    <string name="calculator_one">1</string>
+    <string name="calculator_two">2</string>
+    <string name="calculator_three">3</string>
+    <string name="calculator_plus">+</string>
+    <string name="calculator_zero">0</string>
+    <string name="calculator_point">.</string>
+    <string name="calculator_equal">=</string>
 </resources>

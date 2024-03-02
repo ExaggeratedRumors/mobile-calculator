@@ -2,4 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="light_theme_primary">#FF6200EE</color>
+    <color name="light_theme_secondary">#FF3700B3</color>
+    <color name="light_theme_background">#FFFFFFFF</color>
+    <color name="light_theme_surface">#FFFFFFFF</color>
+    <color name="dark_theme_primary">#262535</color>
+    <color name="dark_theme_secondary">#7E7A7B</color>
+    <color name="dark_theme_background">#FF121212</color>
+    <color name="dark_theme_surface">#FF121212</color>
 </resources>

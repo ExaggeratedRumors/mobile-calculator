@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Mobilecalculator"
         tools:targetApi="34">
         <activity
-            android:name=".menu.MainActivity"
+            android:name=".main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
