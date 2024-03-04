@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     android:rowCount="7"
     android:columnCount="4"
-    android:background="@color/light_theme_background"
-    tools:context=".simple_calculator.SimpleCalculatorActivity">
+    tools:context=".view.SimpleCalculatorActivity">
 
     <TextView
         android:id="@+id/simple_result"

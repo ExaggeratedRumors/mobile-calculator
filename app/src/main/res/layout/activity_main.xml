@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".main.MainActivity">
+    tools:context=".view.MainActivity">
 
     <TextView
         android:id="@+id/app_title"
@@ -60,21 +60,6 @@
         android:textSize="30sp"
         android:fontFamily="monospace"
         android:text="@string/credits"
-        android:background="@drawable/rectangle_button"
-        app:layout_constraintBottom_toTopOf="@+id/exit_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <Button
-        android:id="@+id/exit_btn"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_margin="1dp"
-        android:textSize="30sp"
-        android:fontFamily="monospace"
-        android:text="@string/exit"
         android:background="@drawable/rectangle_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
