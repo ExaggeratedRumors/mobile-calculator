@@ -3,8 +3,12 @@
     <style name="Base.Theme.Mobilecalculator" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <item name="colorPrimary">@color/dark_theme_primary</item>
+        <item name="colorOnPrimary">@color/dark_theme_on_primary</item>
         <item name="colorSecondary">@color/dark_theme_secondary</item>
-        <item name="colorOnBackground">@color/dark_theme_background</item>
+        <item name="colorOnSecondary">@color/dark_theme_on_secondary</item>
         <item name="colorSurface">@color/dark_theme_surface</item>
+        <item name="colorOnSurface">@color/dark_theme_on_surface</item>
+        <item name="colorBackgroundFloating">@color/dark_theme_background</item>
+        <item name="colorOnBackground">@color/dark_theme_on_background</item>
     </style>
 </resources>

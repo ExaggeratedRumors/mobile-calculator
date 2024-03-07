@@ -25,4 +25,21 @@
     <string name="calculator_zero">0</string>
     <string name="calculator_point">.</string>
     <string name="calculator_equal">=</string>
+    <string name="calculator_shift">SHIFT</string>
+    <string name="calculator_rad">RAD</string>
+    <string name="calculator_fse">FSE</string>
+    <string name="calculator_mr">MR</string>
+    <string name="calculator_ms">MS</string>
+    <string name="calculator_mplus">M+</string>
+    <string name="calculator_hyp">hyp</string>
+    <string name="calculator_sin">sin</string>
+    <string name="calculator_cos">cos</string>
+    <string name="calculator_tan">tan</string>
+    <string name="calculator_ln">ln</string>
+    <string name="calculator_log">log</string>
+    <string name="calculator_power">x^y</string>
+    <string name="calculator_sqrt">√</string>
+    <string name="calculator_factorial">n!</string>
+    <string name="calculator_bracket_open">(</string>
+    <string name="calculator_bracket_close">)</string>
 </resources>

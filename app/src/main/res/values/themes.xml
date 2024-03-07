@@ -2,10 +2,14 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Mobilecalculator" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <item name="colorPrimary">@color/light_theme_primary</item>
-        <item name="colorSecondary">@color/light_theme_secondary</item>
-        <item name="colorOnBackground">@color/light_theme_background</item>
-        <item name="colorSurface">@color/light_theme_surface</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorOnSecondary">@color/on_secondary</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/on_surface</item>
+        <item name="colorBackgroundFloating">@color/background</item>
+        <item name="colorOnBackground">@color/on_background</item>
     </style>
 
     <style name="Theme.Mobilecalculator" parent="Base.Theme.Mobilecalculator" />

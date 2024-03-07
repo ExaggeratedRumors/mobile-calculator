@@ -1,5 +1,8 @@
 package com.ertools.mobile_calculator.model
-sealed interface Operation
+
+interface CalculatorInput
+class Number(val value: Double) : CalculatorInput
+sealed interface Operation : CalculatorInput
 class OneArgumentOperation(
     val function: (Double) -> (Double),
     val operationType: OneArgumentOperationType
