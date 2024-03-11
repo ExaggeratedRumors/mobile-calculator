@@ -3,7 +3,6 @@
     <string name="app_title">Mobile Calculator</string>
     <string name="simple_calculator">Simple Calculator</string>
     <string name="scientific_calculator">Scientific Calculator</string>
-    <string name="credits">About me</string>
     <string name="exit">Exit</string>
     <string name="calculator_result">0</string>
     <string name="calculator_clear">C</string>
@@ -42,4 +41,7 @@
     <string name="calculator_factorial">n!</string>
     <string name="calculator_bracket_open">(</string>
     <string name="calculator_bracket_close">)</string>
+    <string name="credits">About me</string>
+    <string name="credits_text">My name is Dominik.\nI am 3rd-year student of informatics specialization.\nCheck my other projects on Github.</string>
+    <string name="credits_link">ExaggeratedRumors\n© 2024</string>
 </resources>

@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:columnCount="6"
-    android:rowCount="9"
+    android:rowCount="8"
+    android:orientation="vertical"
     tools:context=".view.ScientificCalculatorActivity">
 
     <TextView
@@ -34,11 +35,11 @@
         android:layout_gravity="fill"
         android:layout_margin="1dp"
         android:background="@drawable/rectangle_button"
-        app:backgroundTint="@color/secondary"
         android:fontFamily="monospace"
         android:padding="0dp"
         android:text="@string/calculator_shift"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/secondary" />
 
     <Button
         android:id="@+id/scientific_rad"
@@ -53,7 +54,8 @@
         android:fontFamily="monospace"
         android:padding="0dp"
         android:text="@string/calculator_rad"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/secondary" />
 
     <Button
         android:id="@+id/scientific_FSE"
@@ -68,7 +70,8 @@
         android:fontFamily="monospace"
         android:padding="0dp"
         android:text="@string/calculator_fse"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/secondary" />
 
     <Button
         android:id="@+id/scientific_MR"
@@ -83,7 +86,8 @@
         android:fontFamily="monospace"
         android:padding="0dp"
         android:text="@string/calculator_mr"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/secondary" />
 
     <Button
         android:id="@+id/scientific_ms"
@@ -98,7 +102,8 @@
         android:fontFamily="monospace"
         android:padding="0dp"
         android:text="@string/calculator_ms"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/secondary" />
 
     <Button
         android:id="@+id/scientific_mplus"
@@ -113,7 +118,8 @@
         android:fontFamily="monospace"
         android:text="@string/calculator_mplus"
         android:padding="0dp"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/secondary" />
 
     <!-- Second row -->
     <Button
@@ -129,7 +135,8 @@
         android:fontFamily="monospace"
         android:padding="0dp"
         android:text="@string/calculator_hyp"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/secondary" />
 
     <Button
         android:id="@+id/scientific_sin"
@@ -144,7 +151,8 @@
         android:fontFamily="monospace"
         android:padding="0dp"
         android:text="@string/calculator_sin"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/secondary" />
 
     <Button
         android:id="@+id/scientific_cos"
@@ -159,7 +167,8 @@
         android:fontFamily="monospace"
         android:padding="0dp"
         android:text="@string/calculator_cos"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/secondary" />
 
     <Button
         android:id="@+id/scientific_tan"
@@ -174,7 +183,8 @@
         android:fontFamily="monospace"
         android:padding="0dp"
         android:text="@string/calculator_tan"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/secondary" />
 
     <Button
         android:id="@+id/scientific_ln"
@@ -189,7 +199,8 @@
         android:fontFamily="monospace"
         android:padding="0dp"
         android:text="@string/calculator_ln"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/secondary" />
 
     <Button
         android:id="@+id/scientific_log"
@@ -204,7 +215,8 @@
         android:fontFamily="monospace"
         android:padding="0dp"
         android:text="@string/calculator_log"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/secondary" />
 
     <!-- Third row -->
     <Button
@@ -220,7 +232,8 @@
         android:fontFamily="monospace"
         android:padding="0dp"
         android:text="@string/calculator_power"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/secondary" />
 
     <Button
         android:id="@+id/scientific_sqrt"
@@ -235,7 +248,8 @@
         android:fontFamily="monospace"
         android:padding="0dp"
         android:text="@string/calculator_sqrt"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/secondary" />
 
     <Button
         android:id="@+id/scientific_factorial"
@@ -250,7 +264,8 @@
         android:fontFamily="monospace"
         android:padding="0dp"
         android:text="@string/calculator_factorial"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/secondary" />
 
     <Button
         android:id="@+id/scientific_percent"
@@ -265,7 +280,8 @@
         android:fontFamily="monospace"
         android:padding="0dp"
         android:text="@string/calculator_percent"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/secondary" />
 
     <Button
         android:id="@+id/scientific_bracket_open"
@@ -280,7 +296,8 @@
         android:fontFamily="monospace"
         android:padding="0dp"
         android:text="@string/calculator_bracket_open"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/secondary" />
 
     <Button
         android:id="@+id/scientific_bracket_close"
@@ -295,9 +312,8 @@
         android:fontFamily="monospace"
         android:padding="0dp"
         android:text="@string/calculator_bracket_close"
-        android:textSize="20sp" />
-
-
+        android:textSize="20sp"
+        app:backgroundTint="@color/secondary" />
 
     <!-- Fourth row -->
     <Button
@@ -357,21 +373,6 @@
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/calculator_nine"
-        android:textSize="20sp" />
-
-    <Button
-        android:id="@+id/scientific_free0"
-        android:layout_width="60dp"
-        android:layout_row="4"
-        android:layout_column="4"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        android:layout_gravity="fill"
-        android:layout_margin="1dp"
-        android:background="@drawable/rectangle_button"
-        android:fontFamily="monospace"
-        android:padding="0dp"
-        android:text="@string/calculator_clear"
         android:textSize="20sp" />
 
     <Button
@@ -465,21 +466,6 @@
         android:text="@string/calculator_divide"
         android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/scientific_free1"
-        android:layout_width="60dp"
-        android:layout_row="5"
-        android:layout_column="5"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        android:layout_gravity="fill"
-        android:layout_margin="1dp"
-        android:background="@drawable/rectangle_button"
-        android:fontFamily="monospace"
-        android:padding="0dp"
-        android:text="@string/calculator_divide"
-        android:textSize="20sp" />
-
     <!-- Sixth row -->
     <Button
         android:id="@+id/scientific_one"
@@ -541,13 +527,14 @@
         android:text="@string/calculator_plus"
         android:textSize="20sp" />
 
+    <!-- Seventh row -->
     <Button
         android:id="@+id/scientific_minus"
         android:layout_width="60dp"
-        android:layout_row="6"
-        android:layout_column="4"
-        android:layout_columnWeight="1"
+        android:layout_row="7"
         android:layout_rowWeight="1"
+        android:layout_column="3"
+        android:layout_columnWeight="1"
         android:layout_gravity="fill"
         android:layout_margin="1dp"
         android:background="@drawable/rectangle_button"
@@ -556,28 +543,13 @@
         android:text="@string/calculator_minus"
         android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/scientific_free2"
-        android:layout_width="60dp"
-        android:layout_row="6"
-        android:layout_column="5"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        android:layout_gravity="fill"
-        android:layout_margin="1dp"
-        android:background="@drawable/rectangle_button"
-        android:fontFamily="monospace"
-        android:padding="0dp"
-        android:text="@string/calculator_minus"
-        android:textSize="20sp" />
-
-    <!-- Seventh row -->
     <Button
         android:id="@+id/scientific_zero"
         android:layout_width="60dp"
         android:layout_row="7"
         android:layout_column="0"
-        android:layout_columnWeight="1"
+        android:layout_columnWeight="2"
+        android:layout_columnSpan="2"
         android:layout_rowWeight="1"
         android:layout_gravity="fill"
         android:layout_margin="1dp"
@@ -587,28 +559,14 @@
         android:text="@string/calculator_zero"
         android:textSize="20sp" />
 
+    <!-- Sixth row -->
     <Button
         android:id="@+id/scientific_point"
         android:layout_width="60dp"
         android:layout_row="7"
-        android:layout_column="1"
-        android:layout_columnWeight="1"
         android:layout_rowWeight="1"
-        android:layout_gravity="fill"
-        android:layout_margin="1dp"
-        android:background="@drawable/rectangle_button"
-        android:fontFamily="monospace"
-        android:padding="0dp"
-        android:text="@string/calculator_point"
-        android:textSize="20sp" />
-
-    <Button
-        android:id="@+id/scientific_free4"
-        android:layout_width="60dp"
-        android:layout_row="7"
         android:layout_column="2"
         android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
         android:layout_gravity="fill"
         android:layout_margin="1dp"
         android:background="@drawable/rectangle_button"
@@ -620,10 +578,10 @@
     <Button
         android:id="@+id/scientific_sign"
         android:layout_width="60dp"
-        android:layout_row="7"
-        android:layout_column="3"
-        android:layout_columnWeight="1"
+        android:layout_row="4"
         android:layout_rowWeight="1"
+        android:layout_column="4"
+        android:layout_columnWeight="1"
         android:layout_gravity="fill"
         android:layout_margin="1dp"
         android:background="@drawable/rectangle_button"
@@ -633,27 +591,12 @@
         android:textSize="20sp" />
 
     <Button
-        android:id="@+id/scientific_free3"
-        android:layout_width="60dp"
-        android:layout_row="7"
-        android:layout_column="4"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        android:layout_gravity="fill"
-        android:layout_margin="1dp"
-        android:background="@drawable/rectangle_button"
-        android:fontFamily="monospace"
-        android:padding="0dp"
-        android:text="@string/calculator_equal"
-        android:textSize="20sp" />
-
-    <Button
         android:id="@+id/scientific_equal"
         android:layout_width="60dp"
-        android:layout_row="7"
+        android:layout_row="5"
+        android:layout_rowWeight="1"
         android:layout_column="5"
         android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
         android:layout_gravity="fill"
         android:layout_margin="1dp"
         android:background="@drawable/rectangle_button"
@@ -662,15 +605,15 @@
         android:text="@string/calculator_equal"
         android:textSize="20sp" />
 
-    <!-- Sixth row -->
     <Button
         android:id="@+id/scientific_back"
         android:layout_width="60dp"
-        android:layout_row="8"
-        android:layout_column="0"
-        android:layout_columnSpan="6"
-        android:layout_columnWeight="6"
-        android:layout_rowWeight="1"
+        android:layout_row="6"
+        android:layout_column="4"
+        android:layout_columnSpan="2"
+        android:layout_columnWeight="2"
+        android:layout_rowSpan="2"
+        android:layout_rowWeight="2"
         android:layout_gravity="fill"
         android:layout_margin="1dp"
         android:background="@drawable/rectangle_button"

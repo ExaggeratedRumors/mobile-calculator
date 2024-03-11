@@ -8,7 +8,7 @@
     android:useDefaultMargins="true"
     android:rowCount="7"
     android:columnCount="4"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:columnOrderPreserved="false"
     tools:context=".view.SimpleCalculatorActivity">
 
