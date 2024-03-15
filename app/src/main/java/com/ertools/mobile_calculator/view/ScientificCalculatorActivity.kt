@@ -30,11 +30,6 @@ class ScientificCalculatorActivity : AppCompatActivity() {
         clearBtn.setOnClickListener {
             operationBuilder.clearData()
         }
-        val backBtn: Button = findViewById(R.id.scientific_back)
-        backBtn.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
         val plusBtn: Button = findViewById(R.id.scientific_plus)
         plusBtn.setOnClickListener {
             operationBuilder.executeOperation(TwoArgumentOperationType.ADDITION)

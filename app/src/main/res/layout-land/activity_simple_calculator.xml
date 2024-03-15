@@ -271,7 +271,8 @@
         android:id="@+id/simple_equal"
         android:layout_row="4"
         android:layout_column="3"
-        android:layout_columnWeight="1"
+        android:layout_columnSpan="2"
+        android:layout_columnWeight="2"
         android:layout_rowWeight="1"
         android:layout_gravity="fill"
         android:layout_margin="1dp"
@@ -279,18 +280,4 @@
         android:fontFamily="monospace"
         android:text="@string/calculator_equal"
         android:textSize="20sp" />
-
-    <Button
-        android:id="@+id/simple_back"
-        android:layout_row="4"
-        android:layout_column="4"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:layout_gravity="fill"
-        android:layout_margin="1dp"
-        android:background="@drawable/rectangle_button"
-        android:fontFamily="monospace"
-        app:icon="@drawable/baseline_arrow_back_64"
-        app:iconGravity="textStart"
-        app:iconSize="30sp" />
 </GridLayout>

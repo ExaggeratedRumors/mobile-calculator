@@ -16,7 +16,7 @@ class CreditsActivity : AppCompatActivity() {
     }
 
     private fun linkButtonHandle() {
-        val creditsLinkButton: Button = findViewById(R.id.credits_link_btn)
+        val creditsLinkButton: Button = findViewById(R.id.github_logo)
         creditsLinkButton.setOnClickListener {
             val uri = Uri.parse(GITHUB_URL)
             val intent = Intent(Intent.ACTION_VIEW, uri)

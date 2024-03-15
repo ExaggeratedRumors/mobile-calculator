@@ -44,4 +44,5 @@
     <string name="credits">About me</string>
     <string name="credits_text">My name is Dominik.\nI am 3rd-year student of informatics specialization.\nCheck my other projects on Github.</string>
     <string name="credits_link">ExaggeratedRumors\n© 2024</string>
+    <string name="calculator_double">x^2</string>
 </resources>

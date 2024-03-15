@@ -20,3 +20,11 @@ in progress
 - JVM 1.8
 - Gradle 8.2.2
 - Kotlin 1.9.22
+
+
+## TODO
+
+- Usunąć przycisku powrotu, bo tworzą kolejne activities
+- Nie resetować inputu podczas zmiany orientacji
+- onsavedinstancestate
+- 

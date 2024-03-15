@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:alignmentMode="alignMargins"
     android:useDefaultMargins="true"
-    android:rowCount="7"
+    android:rowCount="6"
     android:columnCount="4"
     android:orientation="vertical"
     android:columnOrderPreserved="false"
@@ -281,22 +281,4 @@
         android:fontFamily="monospace"
         android:text="@string/calculator_equal"
         android:textSize="30sp" />
-
-    <!-- Sixth row -->
-    <Button
-        android:id="@+id/simple_back"
-        android:layout_row="6"
-        android:layout_column="0"
-        android:layout_columnSpan="4"
-        android:layout_columnWeight="4"
-        android:layout_rowWeight="1"
-        android:layout_gravity="fill"
-        android:layout_margin="1dp"
-        android:background="@drawable/rectangle_button"
-        android:fontFamily="monospace"
-        android:textSize="30sp"
-        app:iconSize="40sp"
-        app:iconGravity="textStart"
-        app:icon="@drawable/baseline_arrow_back_64"
-        />
 </GridLayout>
