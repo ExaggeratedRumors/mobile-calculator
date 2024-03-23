@@ -1,7 +1,7 @@
 package com.ertools.mobile_calculator.view
 
-import android.content.Intent
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -19,21 +19,29 @@ class SimpleCalculatorActivity : AppCompatActivity() {
         setContentView(R.layout.activity_simple_calculator)
         label = findViewById(R.id.simple_result)
         label.textAlignment = TextView.TEXT_ALIGNMENT_TEXT_END
-        operationBuilder = OperationBuilder(label)
-        operationBuilder.clearData()
+        loadState(savedInstanceState)
         numericButtonsHandle()
         operationButtonsHandle()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
+        outState.putSerializable("operationState", operationBuilder)
+    }
+
+    private fun loadState(savedInstanceState: Bundle?) {
+        operationBuilder = savedInstanceState
+            ?.getSerializable("operationState") as OperationBuilder?
+            ?: OperationBuilder(applicationContext, label)
     }
 
     private fun operationButtonsHandle() {
         val clearBtn: Button = findViewById(R.id.simple_clear)
         clearBtn.setOnClickListener {
-            operationBuilder.clearData()
+            operationBuilder.clearInput()
         }
-        val backBtn: Button = findViewById(R.id.simple_back)
-        backBtn.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+        val clearAllBtn: Button = findViewById(R.id.simple_clear_all)
+        clearAllBtn.setOnClickListener {
+            operationBuilder.clearData()
         }
         val plusBtn: Button = findViewById(R.id.simple_plus)
         plusBtn.setOnClickListener {

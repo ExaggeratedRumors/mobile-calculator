@@ -1,8 +1,8 @@
 package com.ertools.mobile_calculator.model
 
-interface CalculatorInput
-class Number(val value: Double) : CalculatorInput
-sealed interface Operation : CalculatorInput
+import java.io.Serializable
+
+sealed interface Operation : Serializable
 class OneArgumentOperation(
     val function: (Double) -> (Double),
     val operationType: OneArgumentOperationType
@@ -13,9 +13,9 @@ class TwoArgumentOperation(
 ) : Operation
 
 enum class TwoArgumentOperationType {
-    ADDITION, SUBTRACTION, MULTIPLICATION, DIVISION, POWER, ROOT, LOG
+    ADDITION, SUBTRACTION, MULTIPLICATION, DIVISION, POWER, LOG
 }
 
 enum class OneArgumentOperationType {
-    SIN, COS, TAN, LN, FACTORIAL, ABS, SQRT, PERCENTAGE, RECIPROCAL
+    SIN, COS, TAN, LN, FACTORIAL, ABS, SQRT, PERCENTAGE, RECIPROCAL, DOUBLE
 }

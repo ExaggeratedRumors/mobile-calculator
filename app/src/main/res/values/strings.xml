@@ -6,6 +6,7 @@
     <string name="exit">Exit</string>
     <string name="calculator_result">0</string>
     <string name="calculator_clear">C</string>
+    <string name="calculator_clear_all">AC</string>
     <string name="calculator_sign">⁺∕₋</string>
     <string name="calculator_percent">%</string>
     <string name="calculator_divide">÷</string>
