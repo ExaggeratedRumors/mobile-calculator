@@ -6,8 +6,8 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.ertools.mobile_calculator.R
-import com.ertools.mobile_calculator.model.OperationBuilder
 import com.ertools.mobile_calculator.model.OneArgumentOperationType
+import com.ertools.mobile_calculator.model.OperationBuilder
 import com.ertools.mobile_calculator.model.TwoArgumentOperationType
 
 class ScientificCalculatorActivity : AppCompatActivity() {
