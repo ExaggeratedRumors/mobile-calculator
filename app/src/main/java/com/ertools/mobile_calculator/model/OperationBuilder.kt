@@ -2,7 +2,6 @@ package com.ertools.mobile_calculator.model
 
 import android.content.Context
 import android.widget.TextView
-import android.widget.Toast
 import com.ertools.mobile_calculator.utils.OUT_OF_RANGE
 import com.ertools.mobile_calculator.utils.SIMPLE_DIGITS_COUNT
 import com.ertools.mobile_calculator.utils.*
@@ -17,9 +16,10 @@ class OperationBuilder : Serializable {
     private var secondArgument = StringBuilder()
     private var result = StringBuilder()
     private var operation : Operation? = null
-    private var context: Context? = null
-    private var view: TextView? = null
     private var significantDigits: Int = SIMPLE_DIGITS_COUNT
+    private lateinit var context: Context
+    private lateinit var view: TextView
+    private lateinit var exceptionHandler: ExceptionHandler
 
     fun build(
         context: Context,
@@ -29,6 +29,7 @@ class OperationBuilder : Serializable {
         this.context = context
         this.view = view
         this.significantDigits = significantDigits
+        this.exceptionHandler = ExceptionHandler(context)
         invalidateResult()
         return this
     }
@@ -37,13 +38,13 @@ class OperationBuilder : Serializable {
      * Label section.
      */
     private fun invalidateResult() {
-        if(result.isNotEmpty()) view?.text = result.toString()
-        else if(getArgument().isNotEmpty()) view?.text = getArgument().toString()
+        if(result.isNotEmpty()) view.text = result.toString()
+        else if(getArgument().isNotEmpty()) view.text = getArgument().toString()
         else setDefaultLabel()
     }
 
     private fun setDefaultLabel() {
-        view?.text = "0"
+        view.text = "0"
     }
 
     private fun saveResult(value: Double) {
@@ -100,12 +101,12 @@ class OperationBuilder : Serializable {
             OneArgumentOperationType.SIN -> OneArgumentOperation(::sin, operation)
             OneArgumentOperationType.COS -> OneArgumentOperation(::cos, operation)
             OneArgumentOperationType.TAN -> OneArgumentOperation(::tan, operation)
-            OneArgumentOperationType.FACTORIAL -> OneArgumentOperation(::factorial, operation)
+            OneArgumentOperationType.LN -> OneArgumentOperation(::ln, operation)
+            OneArgumentOperationType.FACTORIAL -> OneArgumentOperation(::factorial, operation) { x -> x < 50.0 }
             OneArgumentOperationType.PERCENTAGE -> OneArgumentOperation({x -> 0.01 * x}, operation)
             OneArgumentOperationType.ABS -> OneArgumentOperation({ x -> abs(x) }, operation)
-            OneArgumentOperationType.SQRT -> OneArgumentOperation({ x -> power(x, 0.5) }, operation)
-            OneArgumentOperationType.LN -> OneArgumentOperation({ x -> ln(x) }, operation)
-            OneArgumentOperationType.RECIPROCAL -> OneArgumentOperation({ x -> 1 / x }, operation)
+            OneArgumentOperationType.SQRT -> OneArgumentOperation({ x -> x.pow(0.5) }, operation) { x -> x >= .0 }
+            OneArgumentOperationType.RECIPROCAL -> OneArgumentOperation({ x -> 1 / x }, operation) { x -> x != .0 }
             OneArgumentOperationType.DOUBLE -> OneArgumentOperation({ x -> x * x }, operation)
         }
 
@@ -119,9 +120,14 @@ class OperationBuilder : Serializable {
             return
         }
 
-        val value = (this.operation as OneArgumentOperation).function.invoke(
-            firstArgument.toString().toDouble()
-        )
+        val value = try {
+            (this.operation as OneArgumentOperation).execution(
+                firstArgument.toString().toDouble()
+            )
+        } catch (e: OperationException) {
+            exceptionHandler.handleException(operation)
+            .0
+        }
         saveResult(value)
     }
 
@@ -130,9 +136,9 @@ class OperationBuilder : Serializable {
             TwoArgumentOperationType.ADDITION -> TwoArgumentOperation({x, y -> x + y}, operation)
             TwoArgumentOperationType.SUBTRACTION -> TwoArgumentOperation({x, y -> x - y}, operation)
             TwoArgumentOperationType.MULTIPLICATION -> TwoArgumentOperation({x, y -> x * y}, operation)
-            TwoArgumentOperationType.POWER -> TwoArgumentOperation(::power, operation)
-            TwoArgumentOperationType.LOG -> TwoArgumentOperation(::logarithm, operation)
-            TwoArgumentOperationType.DIVISION -> TwoArgumentOperation(::division, operation)
+            TwoArgumentOperationType.POWER -> TwoArgumentOperation({x, y -> x.pow(y)}, operation) { x, y -> !(x < .0 && y < 1.0) }
+            TwoArgumentOperationType.LOG -> TwoArgumentOperation(::log, operation) { x, y -> !(x == .0 || y == .0 || y == 1.0 || y < .0) }
+            TwoArgumentOperationType.DIVISION -> TwoArgumentOperation({x, y -> x / y} , operation) { _, y -> y != .0}
         }
 
         /**
@@ -153,10 +159,15 @@ class OperationBuilder : Serializable {
             return
         }
 
-        val value = (this.operation as TwoArgumentOperation).function.invoke(
-            firstArgument.toString().toDouble(),
-            secondArgument.toString().toDouble()
-        )
+        val value = try {
+            (this.operation as TwoArgumentOperation).execution(
+                firstArgument.toString().toDouble(),
+                secondArgument.toString().toDouble()
+            )
+        } catch (e: OperationException) {
+            exceptionHandler.handleException(operation)
+            .0
+        }
         saveResult(value)
     }
 
@@ -184,68 +195,5 @@ class OperationBuilder : Serializable {
         }
         getArgument().append(digit)
         invalidateResult()
-    }
-
-
-
-
-
-
-    /**
-     * Special operations
-     */
-
-    private fun factorial(x: Double): Double {
-        return if (x > 50) {
-            Toast.makeText(
-                context,
-                "Whoah don't be so grady!",
-                Toast.LENGTH_SHORT
-            ).show()
-            clearData()
-            .0
-        } else when (x) {
-            0.0, 1.0 -> 1.0
-            else -> (1..x.toInt()).map { it.toDouble() }.reduce { a, b -> a * b }
-        }
-    }
-
-    private fun division(x: Double, y: Double): Double {
-        if(y == .0) {
-            Toast.makeText(
-                context,
-                "Second argument of division cannot be 0.",
-                Toast.LENGTH_SHORT
-            ).show()
-            clearData()
-            return .0
-        }
-        return x / y
-    }
-
-    private fun logarithm(x: Double, y: Double): Double {
-        if(x == .0 || y == .0 || y == 1.0 || y < 0) {
-            Toast.makeText(
-                context,
-                "Incorrect arguments of log.",
-                Toast.LENGTH_SHORT
-            ).show()
-            clearData()
-            return .0
-        }
-        return log(x, y)
-    }
-
-    private fun power(x: Double, y: Double): Double {
-        if(x < 0 && y < 1) {
-            Toast.makeText(
-                context,
-                "Incorrect arguments of power.",
-                Toast.LENGTH_SHORT
-            ).show()
-            clearData()
-            return .0
-        }
-        return x.pow(y)
     }
 }
