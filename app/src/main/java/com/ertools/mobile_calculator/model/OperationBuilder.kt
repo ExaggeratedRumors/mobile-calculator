@@ -12,26 +12,38 @@ import java.lang.StringBuilder
 import java.util.Locale
 import kotlin.math.*
 
-class OperationBuilder(
-    private val context: Context,
-    private val view: TextView,
-    private val significantDigits: Int = SIMPLE_DIGITS_COUNT
-): Serializable {
+class OperationBuilder : Serializable {
     private var firstArgument = StringBuilder()
     private var secondArgument = StringBuilder()
     private var result = StringBuilder()
     private var operation : Operation? = null
+    private var context: Context? = null
+    private var view: TextView? = null
+    private var significantDigits: Int = SIMPLE_DIGITS_COUNT
+
+    fun build(
+        context: Context,
+        view: TextView,
+        significantDigits: Int = SIMPLE_DIGITS_COUNT
+    ): OperationBuilder {
+        this.context = context
+        this.view = view
+        this.significantDigits = significantDigits
+        invalidateResult()
+        return this
+    }
 
     /**
      * Label section.
      */
-    private fun setDefaultLabel() {
-        view.text = "0"
+    private fun invalidateResult() {
+        if(result.isNotEmpty()) view?.text = result.toString()
+        else if(getArgument().isNotEmpty()) view?.text = getArgument().toString()
+        else setDefaultLabel()
     }
 
-    private fun invalidateResult() {
-        if(result.isEmpty()) view.text = getArgument().toString()
-        else view.text = result.toString()
+    private fun setDefaultLabel() {
+        view?.text = "0"
     }
 
     private fun saveResult(value: Double) {
@@ -42,7 +54,7 @@ class OperationBuilder(
             integerDigits = min(integerDigits, significantDigits)
             val decimalDigits = significantDigits - integerDigits
             val format = "%${integerDigits}.${decimalDigits}f"
-            outputString = format.format(Locale.ENGLISH, value)
+            outputString = format.format(Locale.ENGLISH, value).trimEnd('0', '.')
         }
         clearData()
         result.append(outputString)
@@ -173,6 +185,10 @@ class OperationBuilder(
         getArgument().append(digit)
         invalidateResult()
     }
+
+
+
+
 
 
     /**

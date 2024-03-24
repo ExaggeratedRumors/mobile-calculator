@@ -1,7 +1,6 @@
 package com.ertools.mobile_calculator.view
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -19,19 +18,9 @@ class ScientificCalculatorActivity : AppCompatActivity() {
         setContentView(R.layout.activity_scientific_calculator)
         label = findViewById(R.id.scientific_result)
         label.textAlignment = TextView.TEXT_ALIGNMENT_TEXT_END
-        loadState(savedInstanceState)
+        operationBuilder = OperationBuilder().build(applicationContext, label)
         numericButtonsHandle()
         operationButtonsHandle()
-    }
-
-    override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
-        outState.putSerializable("operationState", operationBuilder)
-    }
-
-    private fun loadState(savedInstanceState: Bundle?) {
-        operationBuilder = savedInstanceState
-            ?.getSerializable("operationState") as OperationBuilder?
-            ?: OperationBuilder(applicationContext, label)
     }
 
     private fun operationButtonsHandle() {
