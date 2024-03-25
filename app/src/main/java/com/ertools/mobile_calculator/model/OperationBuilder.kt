@@ -113,12 +113,11 @@ class OperationBuilder : Serializable {
         /**
          * Call operation after getting result.
          */
-        if(firstArgument.isEmpty()) {
+        if(firstArgument.isEmpty() && result.isNotEmpty()) {
             firstArgument.append(result)
             result.clear()
             setDefaultLabel()
-            return
-        }
+        } else return
 
         val value = try {
             (this.operation as OneArgumentOperation).execution(
@@ -176,7 +175,7 @@ class OperationBuilder : Serializable {
         if(getArgument().isEmpty()) setDefaultLabel()
         if(getArgument().length >= SIMPLE_DIGITS_COUNT) return
         when(digit) {
-            '0' -> if(getArgument().isEmpty()) return
+            '0' -> if(getArgument().length == 1 && getArgument()[0] == '0') return
             '.' -> {
                 if(getArgument().contains('.')) return
                 if(getArgument().length >= SIMPLE_DIGITS_COUNT - 1) return
