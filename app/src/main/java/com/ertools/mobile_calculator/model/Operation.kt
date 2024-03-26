@@ -25,7 +25,7 @@ class TwoArgumentOperation(
 }
 
 enum class TwoArgumentOperationType {
-    ADDITION, SUBTRACTION, MULTIPLICATION, DIVISION, POWER, LOG
+    ADDITION, SUBTRACTION, MULTIPLICATION, DIVISION, POWER, LOG, RESULT
 }
 
 enum class OneArgumentOperationType {

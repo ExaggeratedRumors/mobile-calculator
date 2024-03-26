@@ -1,5 +1,6 @@
 package com.ertools.mobile_calculator.utils
 
+const val BUILDER_DEBUG = true
 const val SIMPLE_DIGITS_COUNT = 12
 const val SCIENTIST_DIGITS_COUNT = 20
 const val OUT_OF_RANGE = "NaN"

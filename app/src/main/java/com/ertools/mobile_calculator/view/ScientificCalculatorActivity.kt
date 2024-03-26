@@ -67,7 +67,7 @@ class ScientificCalculatorActivity : AppCompatActivity() {
         }
         val equalBtn: Button = findViewById(R.id.scientific_equal)
         equalBtn.setOnClickListener {
-            operationBuilder?.executeOperation()
+            operationBuilder?.executeOperation(TwoArgumentOperationType.RESULT)
         }
         val squareBtn: Button = findViewById(R.id.scientific_sqrt)
         squareBtn.setOnClickListener {

@@ -1,7 +1,6 @@
 package com.ertools.mobile_calculator.view
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -68,7 +67,7 @@ class SimpleCalculatorActivity : AppCompatActivity() {
         }
         val equalBtn: Button = findViewById(R.id.simple_equal)
         equalBtn.setOnClickListener {
-            operationBuilder?.executeOperation()
+            operationBuilder?.executeOperation(TwoArgumentOperationType.RESULT)
         }
     }
 
