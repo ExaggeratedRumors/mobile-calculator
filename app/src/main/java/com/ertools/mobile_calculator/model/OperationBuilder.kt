@@ -39,7 +39,8 @@ class OperationBuilder : Serializable {
      */
     private fun invalidateResult() {
         if(result.isNotEmpty()) view.text = result.toString()
-        else if(getArgument().isNotEmpty()) view.text = getArgument().toString()
+        else if(secondArgument.isNotEmpty()) view.text = secondArgument.toString()
+        else if(firstArgument.isNotEmpty()) view.text = firstArgument.toString()
         else setDefaultLabel()
     }
 
@@ -55,7 +56,10 @@ class OperationBuilder : Serializable {
             integerDigits = min(integerDigits, significantDigits)
             val decimalDigits = significantDigits - integerDigits
             val format = "%${integerDigits}.${decimalDigits}f"
-            outputString = format.format(Locale.ENGLISH, value).trimEnd('0', '.')
+            outputString = format
+                .format(Locale.ENGLISH, value)
+                .trimEnd('0')
+                .trimEnd('.')
         }
         clearData()
         result.append(outputString)
@@ -116,8 +120,7 @@ class OperationBuilder : Serializable {
         if(firstArgument.isEmpty() && result.isNotEmpty()) {
             firstArgument.append(result)
             result.clear()
-            setDefaultLabel()
-        } else return
+        } else if(firstArgument.isEmpty()) return
 
         val value = try {
             (this.operation as OneArgumentOperation).execution(
@@ -143,20 +146,17 @@ class OperationBuilder : Serializable {
         /**
          * Call operation after getting result.
          */
-        if(firstArgument.isEmpty() && secondArgument.isEmpty()) {
+        if(result.isNotEmpty() && firstArgument.isEmpty()) {
             firstArgument.append(result)
             result.clear()
-            setDefaultLabel()
+            invalidateResult()
             return
-        }
-
-        /**
-         * Incorrect call
-         */
-        if(firstArgument.isEmpty() || secondArgument.isEmpty()) {
-            setDefaultLabel()
-            return
-        }
+        } else if(result.isNotEmpty() && firstArgument.isNotEmpty() && secondArgument.isEmpty()) {
+            firstArgument.clear()
+            firstArgument.append(result.toString())
+            secondArgument.append(firstArgument.toString())
+            result.clear()
+        } else if(firstArgument.isEmpty() || secondArgument.isEmpty()) return
 
         val value = try {
             (this.operation as TwoArgumentOperation).execution(
