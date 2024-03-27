@@ -19,7 +19,7 @@ class SimpleCalculatorActivity : AppCompatActivity() {
         setContentView(R.layout.activity_simple_calculator)
         label = findViewById(R.id.simple_result)
         label.textAlignment = TextView.TEXT_ALIGNMENT_TEXT_END
-        loadState(savedInstanceState)
+        loadOperationBuilderState(savedInstanceState)
         numericButtonsHandle()
         operationButtonsHandle()
     }
@@ -29,7 +29,7 @@ class SimpleCalculatorActivity : AppCompatActivity() {
         super.onSaveInstanceState(outState)
     }
 
-    private fun loadState(savedInstanceState: Bundle?) {
+    private fun loadOperationBuilderState(savedInstanceState: Bundle?) {
         operationBuilder = savedInstanceState
                 ?.getSerializable(OPERATION_BUILDER_STATE) as OperationBuilder?
                 ?: OperationBuilder()

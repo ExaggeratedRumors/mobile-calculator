@@ -6,7 +6,6 @@ import com.ertools.mobile_calculator.utils.OUT_OF_RANGE
 import com.ertools.mobile_calculator.utils.SIMPLE_DIGITS_COUNT
 import com.ertools.mobile_calculator.utils.*
 import java.io.Serializable
-import java.lang.Integer.min
 import java.lang.StringBuilder
 import java.util.Locale
 import kotlin.math.*
@@ -89,13 +88,12 @@ class OperationBuilder : Serializable {
      */
     private fun saveResult(value: Double) {
         var integerDigits = value.toLong().toString().length
-        val outputString: String
-        if(integerDigits > significantDigits) outputString = OUT_OF_RANGE
+        if(value < .0) integerDigits += 1
+        val outputString: String = if(integerDigits > significantDigits) OUT_OF_RANGE
         else {
-            integerDigits = min(integerDigits, significantDigits)
-            val decimalDigits = significantDigits - integerDigits
+            val decimalDigits = significantDigits - integerDigits - 1
             val format = "%${integerDigits}.${decimalDigits}f"
-            outputString = format
+            format
                 .format(Locale.ENGLISH, value)
                 .trimEnd('0')
                 .trimEnd('.')
@@ -107,9 +105,9 @@ class OperationBuilder : Serializable {
     private fun isOperationAbandoned(): Boolean {
         if(firstArgument.isEmpty() && result.isEmpty()) {
             operation = null
-            return false
+            return true
         }
-        return true
+        return false
     }
 
     /** ===================================
@@ -151,7 +149,7 @@ class OperationBuilder : Serializable {
             OneArgumentOperationType.COS -> OneArgumentOperation(::cos, operation)
             OneArgumentOperationType.TAN -> OneArgumentOperation(::tan, operation)
             OneArgumentOperationType.LN -> OneArgumentOperation(::ln, operation)
-            OneArgumentOperationType.FACTORIAL -> OneArgumentOperation(::factorial, operation) { x -> x < 50.0 }
+            OneArgumentOperationType.FACTORIAL -> OneArgumentOperation(::factorial, operation) { x -> x < 20.0 }
             OneArgumentOperationType.PERCENTAGE -> OneArgumentOperation({x -> 0.01 * x}, operation)
             OneArgumentOperationType.ABS -> OneArgumentOperation({ x -> abs(x) }, operation)
             OneArgumentOperationType.SQRT -> OneArgumentOperation({ x -> x.pow(0.5) }, operation) { x -> x >= .0 }

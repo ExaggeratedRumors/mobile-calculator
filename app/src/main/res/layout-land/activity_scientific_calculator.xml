@@ -230,7 +230,8 @@
         android:fontFamily="monospace"
         android:padding="0dp"
         android:text="@string/calculator_seven"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/primary_alt" />
 
     <Button
         android:id="@+id/scientific_eight"
@@ -245,7 +246,8 @@
         android:fontFamily="monospace"
         android:padding="0dp"
         android:text="@string/calculator_eight"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/primary_alt" />
 
     <Button
         android:id="@+id/scientific_nine"
@@ -260,7 +262,8 @@
         android:fontFamily="monospace"
         android:padding="0dp"
         android:text="@string/calculator_nine"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/primary_alt" />
 
     <Button
         android:id="@+id/scientific_zero"
@@ -276,7 +279,8 @@
         android:fontFamily="monospace"
         android:padding="0dp"
         android:text="@string/calculator_zero"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/primary_alt" />
 
     <Button
         android:id="@+id/scientific_plus"
@@ -322,7 +326,8 @@
         android:fontFamily="monospace"
         android:padding="0dp"
         android:text="@string/calculator_four"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/primary_alt" />
 
     <Button
         android:id="@+id/scientific_five"
@@ -337,7 +342,8 @@
         android:fontFamily="monospace"
         android:padding="0dp"
         android:text="@string/calculator_five"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/primary_alt" />
 
     <Button
         android:id="@+id/scientific_six"
@@ -352,7 +358,8 @@
         android:fontFamily="monospace"
         android:padding="0dp"
         android:text="@string/calculator_six"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/primary_alt" />
 
     <Button
         android:id="@+id/scientific_minus"
@@ -399,7 +406,8 @@
         android:fontFamily="monospace"
         android:padding="0dp"
         android:text="@string/calculator_one"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/primary_alt" />
 
     <Button
         android:id="@+id/scientific_two"
@@ -414,7 +422,8 @@
         android:fontFamily="monospace"
         android:padding="0dp"
         android:text="@string/calculator_two"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/primary_alt" />
 
     <Button
         android:id="@+id/scientific_three"
@@ -429,7 +438,8 @@
         android:fontFamily="monospace"
         android:padding="0dp"
         android:text="@string/calculator_three"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/primary_alt" />
 
     <Button
         android:id="@+id/scientific_point"

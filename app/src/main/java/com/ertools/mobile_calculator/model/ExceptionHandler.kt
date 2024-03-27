@@ -10,7 +10,7 @@ class ExceptionHandler(private val context: Context) {
             OneArgumentOperationType.COS -> "Invalid argument for cos function."
             OneArgumentOperationType.TAN -> "Invalid argument for tan function."
             OneArgumentOperationType.LN -> "Invalid argument for ln function."
-            OneArgumentOperationType.FACTORIAL -> "Invalid argument for factorial function."
+            OneArgumentOperationType.FACTORIAL -> "Whoah, don't be so greedy!"
             OneArgumentOperationType.ABS -> "Invalid argument for abs function."
             OneArgumentOperationType.SQRT -> "Invalid argument for sqrt function."
             OneArgumentOperationType.PERCENTAGE -> "Invalid argument for percentage function."
@@ -28,6 +28,7 @@ class ExceptionHandler(private val context: Context) {
             TwoArgumentOperationType.DIVISION -> "Second argument of division cannot be 0."
             TwoArgumentOperationType.POWER -> "Incorrect arguments of power."
             TwoArgumentOperationType.LOG -> "Incorrect arguments of log."
+            TwoArgumentOperationType.RESULT -> "Invalid arguments for result operation."
         }
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }

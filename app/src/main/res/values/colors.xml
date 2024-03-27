@@ -6,7 +6,9 @@
     <!-- Light theme colors -->
     <color name="primary">#FF6200EE</color>
     <color name="on_primary">#FFFFFFFF</color>
-    <color name="secondary">#530DF1</color>
+    <color name="primary_alt">#7215F6</color>
+    <color name="on_primary_alt">#FFFFFFFF</color>
+    <color name="secondary">#4306CD</color>
     <color name="on_secondary">#FFFFFFFF</color>
     <color name="surface">#B7C3E1</color>
     <color name="on_surface">#1B0142</color>

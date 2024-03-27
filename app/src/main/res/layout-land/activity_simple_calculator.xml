@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:alignmentMode="alignMargins"
@@ -14,6 +15,7 @@
     <TextView
         android:id="@+id/simple_result"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_row="0"
         android:layout_rowWeight="1"
         android:layout_column="0"
@@ -37,7 +39,8 @@
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/calculator_seven"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/primary_alt" />
 
     <Button
         android:id="@+id/simple_eight"
@@ -50,7 +53,8 @@
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/calculator_eight"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/primary_alt" />
 
     <Button
         android:id="@+id/simple_nine"
@@ -63,7 +67,8 @@
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/calculator_nine"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/primary_alt" />
 
     <Button
         android:id="@+id/simple_clear"
@@ -107,7 +112,8 @@
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/calculator_four"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/primary_alt" />
 
     <Button
         android:id="@+id/simple_five"
@@ -120,7 +126,8 @@
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/calculator_five"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/primary_alt" />
 
     <Button
         android:id="@+id/simple_six"
@@ -133,7 +140,8 @@
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/calculator_six"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/primary_alt" />
 
     <Button
         android:id="@+id/simple_minus"
@@ -173,7 +181,8 @@
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/calculator_one"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/primary_alt" />
 
     <Button
         android:id="@+id/simple_two"
@@ -186,7 +195,8 @@
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/calculator_two"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/primary_alt" />
 
     <Button
         android:id="@+id/simple_three"
@@ -199,7 +209,8 @@
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/calculator_three"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/primary_alt" />
 
     <Button
         android:id="@+id/simple_plus"
@@ -239,7 +250,8 @@
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/calculator_zero"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/primary_alt" />
 
     <Button
         android:id="@+id/simple_point"
