@@ -148,7 +148,7 @@ class OperationBuilder : Serializable {
             OneArgumentOperationType.SIN -> OneArgumentOperation(::sin, operation)
             OneArgumentOperationType.COS -> OneArgumentOperation(::cos, operation)
             OneArgumentOperationType.TAN -> OneArgumentOperation(::tan, operation)
-            OneArgumentOperationType.LN -> OneArgumentOperation(::ln, operation)
+            OneArgumentOperationType.LN -> OneArgumentOperation(::ln, operation) { x-> x > .0 }
             OneArgumentOperationType.FACTORIAL -> OneArgumentOperation(::factorial, operation) { x -> x < 20.0 }
             OneArgumentOperationType.PERCENTAGE -> OneArgumentOperation({x -> 0.01 * x}, operation)
             OneArgumentOperationType.ABS -> OneArgumentOperation({ x -> abs(x) }, operation)
@@ -169,7 +169,7 @@ class OperationBuilder : Serializable {
                 firstArgument.toString().toDouble()
             )
         } catch (e: OperationException) {
-            exceptionHandler.handleException(operation)
+            exceptionHandler.handleException((this.operation as OneArgumentOperation).operationType)
             clearData()
             .0
         }
@@ -196,7 +196,7 @@ class OperationBuilder : Serializable {
             TwoArgumentOperationType.SUBTRACTION -> TwoArgumentOperation({x, y -> x - y}, operation)
             TwoArgumentOperationType.MULTIPLICATION -> TwoArgumentOperation({x, y -> x * y}, operation)
             TwoArgumentOperationType.POWER -> TwoArgumentOperation({x, y -> x.pow(y)}, operation) { x, y -> !(x < .0 && y < 1.0) }
-            TwoArgumentOperationType.LOG -> TwoArgumentOperation(::log, operation) { x, y -> !(x == .0 || y == .0 || y == 1.0 || y < .0) }
+            TwoArgumentOperationType.LOG -> TwoArgumentOperation(::log, operation) { x, y -> !(x <= .0 || y == .0 || y == 1.0 || y < .0) }
             TwoArgumentOperationType.DIVISION -> TwoArgumentOperation({x, y -> x / y} , operation) { _, y -> y != .0}
             TwoArgumentOperationType.RESULT -> null
         }
@@ -245,12 +245,12 @@ class OperationBuilder : Serializable {
             println("DEBUG - before append; First: $firstArgument, Second: $secondArgument, Result: $result, Op: $operation")
 
         prepareResult()
-        if(getArgument().length >= SIMPLE_DIGITS_COUNT) return
+        if(getArgument().length >= significantDigits) return
         when(digit) {
             '0' -> if(getArgument().length == 1 && getArgument()[0] == '0') return
             '.' -> {
                 if(getArgument().contains('.')) return
-                if(getArgument().length >= SIMPLE_DIGITS_COUNT - 1) return
+                if(getArgument().length >= significantDigits - 1) return
                 if(getArgument().isEmpty()) getArgument().append('0')
             }
             '-' -> {

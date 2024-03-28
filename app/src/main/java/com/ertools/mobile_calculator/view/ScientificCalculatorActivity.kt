@@ -9,6 +9,7 @@ import com.ertools.mobile_calculator.model.OneArgumentOperationType
 import com.ertools.mobile_calculator.model.OperationBuilder
 import com.ertools.mobile_calculator.model.TwoArgumentOperationType
 import com.ertools.mobile_calculator.utils.OPERATION_BUILDER_STATE
+import com.ertools.mobile_calculator.utils.SCIENTIST_DIGITS_COUNT
 
 class ScientificCalculatorActivity : AppCompatActivity() {
     private lateinit var label: TextView
@@ -33,7 +34,7 @@ class ScientificCalculatorActivity : AppCompatActivity() {
         operationBuilder = savedInstanceState
             ?.getSerializable(OPERATION_BUILDER_STATE) as OperationBuilder?
             ?: OperationBuilder()
-        operationBuilder?.build(applicationContext, label)
+        operationBuilder?.build(applicationContext, label, SCIENTIST_DIGITS_COUNT)
     }
 
     private fun operationButtonsHandle() {
