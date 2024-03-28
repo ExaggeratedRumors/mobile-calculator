@@ -62,6 +62,20 @@
         android:text="@string/credits"
         android:textSize="30sp" />
 
+    <Button
+        android:id="@+id/exit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/rectangle_button"
+        android:fontFamily="monospace"
+        android:text="@string/exit"
+        android:textSize="30sp" />
+
     <Space
         android:layout_width="match_parent"
         android:layout_height="0dp"

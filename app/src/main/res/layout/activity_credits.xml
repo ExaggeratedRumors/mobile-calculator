@@ -10,7 +10,7 @@
         android:id="@+id/about_me_title"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.25"
+        android:layout_weight="0.15"
         android:layout_marginTop="10dp"
         android:gravity="center"
         android:fontFamily="monospace"
@@ -23,7 +23,7 @@
         android:id="@+id/app_title"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.15"
+        android:layout_weight="0.1"
         android:background="@drawable/top_rounded_surface"
         android:padding="10dp"
         android:fontFamily="monospace"
@@ -62,10 +62,16 @@
         android:text="@string/credits_link"
         android:textAlignment="center"
         android:textColor="@color/on_surface"
-        android:textSize="22sp"
+        android:textSize="20sp"
         app:backgroundTint="@color/surface"
         app:icon="@drawable/gh_logo"
         app:iconGravity="textStart"
         app:iconSize="75dp"
         app:iconTint="@color/on_background" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1" />
+
 </LinearLayout>

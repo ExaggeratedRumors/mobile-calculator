@@ -10,6 +10,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var simpleCalculatorButton: Button
     private lateinit var scientificCalculatorButton: Button
     private lateinit var creditsButton: Button
+    private lateinit var exitButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         simpleCalculatorHandle()
         scientificCalculatorHandle()
         creditsHandle()
+        exitHandle()
     }
 
     private fun simpleCalculatorHandle() {
@@ -42,4 +44,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+    private fun exitHandle() {
+        this.exitButton = findViewById(R.id.exit_btn)
+        exitButton.setOnClickListener {
+            this.finishAffinity()
+        }
+    }
 }
+
