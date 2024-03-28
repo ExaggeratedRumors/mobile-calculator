@@ -68,7 +68,8 @@ class OperationBuilder : Serializable {
      */
     private fun prepareResult() {
         if(result.isNotEmpty()) {
-            if(firstArgument.isEmpty() && operation != null) resultToFirstArgument()
+            if(result.equals(OUT_OF_RANGE)) clearData()
+            else if(firstArgument.isEmpty() && operation != null) resultToFirstArgument()
             else result.clear()
         }
         if(getArgument().isEmpty()) setDefaultLabel()
@@ -89,8 +90,10 @@ class OperationBuilder : Serializable {
     private fun saveResult(value: Double) {
         var integerDigits = value.toLong().toString().length
         if(value < .0) integerDigits += 1
-        val outputString: String = if(integerDigits > significantDigits) OUT_OF_RANGE
-        else {
+        val outputString: String = if(integerDigits > significantDigits) {
+            exceptionHandler.handleException("NaN")
+            OUT_OF_RANGE
+        } else {
             val decimalDigits = significantDigits - integerDigits - 1
             val format = "%${integerDigits}.${decimalDigits}f"
             format
@@ -149,7 +152,7 @@ class OperationBuilder : Serializable {
             OneArgumentOperationType.COS -> OneArgumentOperation(::cos, operation)
             OneArgumentOperationType.TAN -> OneArgumentOperation(::tan, operation)
             OneArgumentOperationType.LN -> OneArgumentOperation(::ln, operation) { x-> x > .0 }
-            OneArgumentOperationType.FACTORIAL -> OneArgumentOperation(::factorial, operation) { x -> x < 20.0 }
+            OneArgumentOperationType.FACTORIAL -> OneArgumentOperation(::factorial, operation) { x -> x < 20.0 && x >= .0}
             OneArgumentOperationType.PERCENTAGE -> OneArgumentOperation({x -> 0.01 * x}, operation)
             OneArgumentOperationType.ABS -> OneArgumentOperation({ x -> abs(x) }, operation)
             OneArgumentOperationType.SQRT -> OneArgumentOperation({ x -> x.pow(0.5) }, operation) { x -> x >= .0 }
@@ -162,7 +165,7 @@ class OperationBuilder : Serializable {
          */
         if(firstArgument.isEmpty() && result.isNotEmpty()) {
             resultToFirstArgument()
-        } else if(firstArgument.isEmpty()) return
+        } else if(firstArgument.isEmpty()) firstArgument.append("0")
 
         val value = try {
             (this.operation as OneArgumentOperation).execution(

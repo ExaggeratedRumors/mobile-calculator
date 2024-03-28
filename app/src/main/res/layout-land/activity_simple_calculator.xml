@@ -15,17 +15,18 @@
     <TextView
         android:id="@+id/simple_result"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_row="0"
         android:layout_rowWeight="1"
         android:layout_column="0"
         android:layout_columnSpan="5"
-        android:layout_columnWeight="4"
+        android:layout_columnWeight="5"
+        android:layout_height="0dp"
         android:layout_gravity="fill"
         android:layout_margin="1dp"
         android:fontFamily="monospace"
         android:text="@string/calculator_result"
-        android:textSize="40sp" />
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="70sp" />
 
     <!-- First row -->
     <Button
@@ -33,13 +34,15 @@
         android:layout_row="1"
         android:layout_column="0"
         android:layout_columnWeight="1"
+        android:layout_height="0dp"
         android:layout_rowWeight="1"
         android:layout_gravity="fill"
         android:layout_margin="1dp"
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/calculator_seven"
-        android:textSize="20sp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="50sp"
         app:backgroundTint="@color/primary_alt" />
 
     <Button
@@ -47,13 +50,15 @@
         android:layout_row="1"
         android:layout_column="1"
         android:layout_columnWeight="1"
+        android:layout_height="0dp"
         android:layout_rowWeight="1"
         android:layout_gravity="fill"
         android:layout_margin="1dp"
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/calculator_eight"
-        android:textSize="20sp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="50sp"
         app:backgroundTint="@color/primary_alt" />
 
     <Button
@@ -61,44 +66,48 @@
         android:layout_row="1"
         android:layout_column="2"
         android:layout_columnWeight="1"
+        android:layout_height="0dp"
         android:layout_rowWeight="1"
         android:layout_gravity="fill"
         android:layout_margin="1dp"
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/calculator_nine"
-        android:textSize="20sp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="50sp"
         app:backgroundTint="@color/primary_alt" />
 
     <Button
         android:id="@+id/simple_clear"
         android:layout_width="wrap_content"
-        android:layout_height="35dp"
         android:layout_row="1"
         android:layout_column="3"
         android:layout_columnWeight="1"
+        android:layout_height="0dp"
         android:layout_rowWeight="1"
         android:layout_gravity="fill"
         android:layout_margin="1dp"
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/calculator_clear"
-        android:textSize="20sp" />
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="50sp" />
 
     <Button
         android:id="@+id/simple_clear_all"
         android:layout_width="wrap_content"
-        android:layout_height="35dp"
         android:layout_row="1"
         android:layout_column="4"
         android:layout_columnWeight="1"
+        android:layout_height="0dp"
         android:layout_rowWeight="1"
         android:layout_gravity="fill"
         android:layout_margin="1dp"
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/calculator_clear_all"
-        android:textSize="20sp" />
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="50sp" />
 
     <!-- Second row -->
     <Button
@@ -106,13 +115,15 @@
         android:layout_row="2"
         android:layout_column="0"
         android:layout_columnWeight="1"
+        android:layout_height="0dp"
         android:layout_rowWeight="1"
         android:layout_gravity="fill"
         android:layout_margin="1dp"
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/calculator_four"
-        android:textSize="20sp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="50sp"
         app:backgroundTint="@color/primary_alt" />
 
     <Button
@@ -120,13 +131,15 @@
         android:layout_row="2"
         android:layout_column="1"
         android:layout_columnWeight="1"
+        android:layout_height="0dp"
         android:layout_rowWeight="1"
         android:layout_gravity="fill"
         android:layout_margin="1dp"
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/calculator_five"
-        android:textSize="20sp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="50sp"
         app:backgroundTint="@color/primary_alt" />
 
     <Button
@@ -134,13 +147,15 @@
         android:layout_row="2"
         android:layout_column="2"
         android:layout_columnWeight="1"
+        android:layout_height="0dp"
         android:layout_rowWeight="1"
         android:layout_gravity="fill"
         android:layout_margin="1dp"
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/calculator_six"
-        android:textSize="20sp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="50sp"
         app:backgroundTint="@color/primary_alt" />
 
     <Button
@@ -148,26 +163,30 @@
         android:layout_row="2"
         android:layout_column="3"
         android:layout_columnWeight="1"
+        android:layout_height="0dp"
         android:layout_rowWeight="1"
         android:layout_gravity="fill"
         android:layout_margin="1dp"
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/calculator_minus"
-        android:textSize="20sp" />
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="50sp" />
 
     <Button
         android:id="@+id/simple_divide"
         android:layout_row="2"
         android:layout_column="4"
         android:layout_columnWeight="1"
+        android:layout_height="0dp"
         android:layout_rowWeight="1"
         android:layout_gravity="fill"
         android:layout_margin="1dp"
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/calculator_divide"
-        android:textSize="20sp" />
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="50sp" />
 
     <!-- Third row -->
     <Button
@@ -175,13 +194,15 @@
         android:layout_row="3"
         android:layout_column="0"
         android:layout_columnWeight="1"
+        android:layout_height="0dp"
         android:layout_rowWeight="1"
         android:layout_gravity="fill"
         android:layout_margin="1dp"
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/calculator_one"
-        android:textSize="20sp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="50sp"
         app:backgroundTint="@color/primary_alt" />
 
     <Button
@@ -189,13 +210,15 @@
         android:layout_row="3"
         android:layout_column="1"
         android:layout_columnWeight="1"
+        android:layout_height="0dp"
         android:layout_rowWeight="1"
         android:layout_gravity="fill"
         android:layout_margin="1dp"
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/calculator_two"
-        android:textSize="20sp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="50sp"
         app:backgroundTint="@color/primary_alt" />
 
     <Button
@@ -203,13 +226,15 @@
         android:layout_row="3"
         android:layout_column="2"
         android:layout_columnWeight="1"
+        android:layout_height="0dp"
         android:layout_rowWeight="1"
         android:layout_gravity="fill"
         android:layout_margin="1dp"
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/calculator_three"
-        android:textSize="20sp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="50sp"
         app:backgroundTint="@color/primary_alt" />
 
     <Button
@@ -217,26 +242,30 @@
         android:layout_row="3"
         android:layout_column="3"
         android:layout_columnWeight="1"
+        android:layout_height="0dp"
         android:layout_rowWeight="1"
         android:layout_gravity="fill"
         android:layout_margin="1dp"
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/calculator_plus"
-        android:textSize="20sp" />
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="50sp" />
 
     <Button
         android:id="@+id/simple_multiply"
         android:layout_row="3"
         android:layout_column="4"
         android:layout_columnWeight="1"
+        android:layout_height="0dp"
         android:layout_rowWeight="1"
         android:layout_gravity="fill"
         android:layout_margin="1dp"
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/calculator_multiply"
-        android:textSize="20sp" />
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="50sp" />
 
     <!-- Fourth row -->
     <Button
@@ -245,12 +274,14 @@
         android:layout_column="0"
         android:layout_rowWeight="1"
         android:layout_columnWeight="1"
+        android:layout_height="0dp"
         android:layout_gravity="fill"
         android:layout_margin="1dp"
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/calculator_zero"
-        android:textSize="20sp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="50sp"
         app:backgroundTint="@color/primary_alt" />
 
     <Button
@@ -258,39 +289,45 @@
         android:layout_row="4"
         android:layout_column="1"
         android:layout_columnWeight="1"
+        android:layout_height="0dp"
         android:layout_rowWeight="1"
         android:layout_gravity="fill"
         android:layout_margin="1dp"
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/calculator_point"
-        android:textSize="20sp" />
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="50sp" />
 
     <Button
         android:id="@+id/simple_sign"
         android:layout_row="4"
         android:layout_column="2"
         android:layout_columnWeight="1"
+        android:layout_height="0dp"
         android:layout_rowWeight="1"
         android:layout_gravity="fill"
         android:layout_margin="1dp"
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/calculator_sign"
-        android:textSize="20sp" />
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="50sp" />
 
     <Button
         android:id="@+id/simple_percent"
         android:layout_row="4"
         android:layout_column="3"
         android:layout_columnWeight="1"
+        android:layout_height="0dp"
         android:layout_rowWeight="1"
         android:layout_gravity="fill"
         android:layout_margin="1dp"
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/calculator_percent"
-        android:textSize="20sp" />
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="50sp" />
 
     <Button
         android:id="@+id/simple_equal"
@@ -298,11 +335,13 @@
         android:layout_column="4"
         android:layout_columnSpan="1"
         android:layout_columnWeight="1"
+        android:layout_height="0dp"
         android:layout_rowWeight="1"
         android:layout_gravity="fill"
         android:layout_margin="1dp"
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/calculator_equal"
-        android:textSize="20sp" />
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="50sp" />
 </GridLayout>

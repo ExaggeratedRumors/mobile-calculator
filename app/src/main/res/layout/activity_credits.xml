@@ -11,63 +11,81 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.15"
-        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
         android:gravity="center"
         android:fontFamily="monospace"
         android:text="@string/credits"
         android:textAlignment="center"
         android:textColor="@color/on_surface"
-        android:textSize="30sp" />
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="50sp" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/app_title"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.1"
-        android:background="@drawable/top_rounded_surface"
-        android:padding="10dp"
-        android:fontFamily="monospace"
-        android:gravity="center"
-        android:text="@string/app_name"
-        android:textAlignment="center"
-        android:textColor="@color/on_background"
-        android:textSize="25sp" />
+        android:layout_weight="0.75"
+        android:scrollbars = "vertical"
+        android:background="@drawable/rounded_surface"
+        android:fillViewport="true" >
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/credits_text"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.3"
-        android:background="@color/surface"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:fontFamily="monospace"
-        android:text="@string/credits_text"
-        android:gravity="center"
-        android:textAlignment="gravity"
-        android:textColor="@color/on_surface"
-        android:textSize="25sp"
-        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/activity_horizontal_margin">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/github_logo"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.3"
-        android:layout_gravity="center"
-        android:background="@drawable/bottom_rounded_surface"
-        android:paddingBottom="10dp"
-        android:fontFamily="monospace"
-        android:foregroundTint="@color/surface"
-        android:text="@string/credits_link"
-        android:textAlignment="center"
-        android:textColor="@color/on_surface"
-        android:textSize="20sp"
-        app:backgroundTint="@color/surface"
-        app:icon="@drawable/gh_logo"
-        app:iconGravity="textStart"
-        app:iconSize="75dp"
-        app:iconTint="@color/on_background" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/app_title"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.2"
+                android:padding="10dp"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textAlignment="center"
+                android:textColor="@color/on_background"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMaxTextSize="40sp"
+                android:maxLines="1"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/credits_text"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.4"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:fontFamily="monospace"
+                android:text="@string/credits_text"
+                android:gravity="center"
+                android:textAlignment="gravity"
+                android:textColor="@color/on_surface"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMaxTextSize="50sp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/github_logo"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.3"
+                android:layout_gravity="center"
+                android:paddingBottom="10dp"
+                android:fontFamily="monospace"
+                android:foregroundTint="@color/surface"
+                android:text="@string/credits_link"
+                android:textAlignment="center"
+                android:textColor="@color/on_surface"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMaxTextSize="40sp"
+                android:maxLines="2"
+                app:backgroundTint="@color/surface"
+                app:icon="@drawable/gh_logo"
+                app:iconGravity="textStart"
+                app:iconSize="60sp"
+                app:iconTint="@color/on_background" />
+        </LinearLayout>
+    </ScrollView>
 
     <Space
         android:layout_width="match_parent"

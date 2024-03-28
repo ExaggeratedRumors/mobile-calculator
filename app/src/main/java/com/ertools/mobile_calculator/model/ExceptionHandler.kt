@@ -4,6 +4,14 @@ import android.content.Context
 import android.widget.Toast
 
 class ExceptionHandler(private val context: Context) {
+    fun handleException(string: String) {
+        val message = when(string) {
+            "NaN" -> "Operator is out of range."
+            else -> "Nothing"
+        }
+        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+    }
+
     fun handleException(operationType: OneArgumentOperationType) {
         val message = when(operationType) {
             OneArgumentOperationType.SIN -> "Invalid argument for sin function."

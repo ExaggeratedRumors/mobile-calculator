@@ -11,14 +11,15 @@
         android:id="@+id/app_title"
         android:layout_height="0dp"
         android:layout_width="match_parent"
-        android:layout_weight="3"
+        android:layout_weight="2"
         android:fontFamily="monospace"
         android:gravity="center"
         android:singleLine="false"
         android:text="@string/app_title"
         android:textAlignment="center"
-        android:textColor="@color/design_default_color_primary"
-        android:textSize="30sp" />
+        android:textColor="@color/on_primary_alt"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="40sp"/>
 
     <Button
         android:id="@+id/simple_calculator_btn"
@@ -32,7 +33,8 @@
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/simple_calculator"
-        android:textSize="30sp" />
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="30sp"/>
 
     <Button
         android:id="@+id/scientific_calculator_btn"
@@ -46,7 +48,8 @@
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/scientific_calculator"
-        android:textSize="30sp" />
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="30sp"/>
 
     <Button
         android:id="@+id/credits_btn"
@@ -60,8 +63,8 @@
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/credits"
-        android:textSize="30sp" />
-
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="30sp"/>
     <Button
         android:id="@+id/exit_btn"
         android:layout_width="match_parent"
@@ -74,11 +77,11 @@
         android:background="@drawable/rectangle_button"
         android:fontFamily="monospace"
         android:text="@string/exit"
-        android:textSize="30sp" />
-
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="30sp"/>
     <Space
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="0.5" />
 
 </LinearLayout>
