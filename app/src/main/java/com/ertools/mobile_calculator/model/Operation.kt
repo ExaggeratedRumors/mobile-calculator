@@ -32,6 +32,6 @@ enum class OneArgumentOperationType {
     SIN, COS, TAN, LN, FACTORIAL, ABS, SQRT, PERCENTAGE, RECIPROCAL, DOUBLE
 }
 
-class OperationException() : Exception() {
+class OperationException : Exception() {
     override val message: String = "Invalid operation arguments."
 }
