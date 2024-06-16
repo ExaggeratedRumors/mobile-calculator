@@ -8,6 +8,11 @@
 
 Android calculator app with simple and scientific mode.
 
+## Features
+
+- Simple mode calculator.
+- Scientific mode calculator.
+
 ## Release
 
 `
@@ -20,3 +25,9 @@ v1.0
 - JVM 1.8
 - Gradle 8.2.2
 - Kotlin 1.9.22
+
+## Preview
+
+<p align="center">
+    <img src="images/preview.jpg" width="300" alt="logo"/> 
+</p>
