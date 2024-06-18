@@ -37,88 +37,44 @@ class SimpleCalculatorActivity : AppCompatActivity() {
     }
 
     private fun operationButtonsHandle() {
-        val clearBtn: Button = findViewById(R.id.simple_clear)
-        clearBtn.setOnClickListener {
-            operationBuilder?.clearInput()
-        }
-        val clearAllBtn: Button = findViewById(R.id.simple_clear_all)
-        clearAllBtn.setOnClickListener {
-            operationBuilder?.clearData()
-        }
-        val plusBtn: Button = findViewById(R.id.simple_plus)
-        plusBtn.setOnClickListener {
-            operationBuilder?.executeOperation(TwoArgumentOperationType.ADDITION)
-        }
-        val minusBtn: Button = findViewById(R.id.simple_minus)
-        minusBtn.setOnClickListener {
-            operationBuilder?.executeOperation(TwoArgumentOperationType.SUBTRACTION)
-        }
-        val multiplyBtn: Button = findViewById(R.id.simple_multiply)
-        multiplyBtn.setOnClickListener {
-            operationBuilder?.executeOperation(TwoArgumentOperationType.MULTIPLICATION)
-        }
-        val divideBtn: Button = findViewById(R.id.simple_divide)
-        divideBtn.setOnClickListener {
-            operationBuilder?.executeOperation(TwoArgumentOperationType.DIVISION)
-        }
-        val percentageBtn: Button = findViewById(R.id.simple_percent)
-        percentageBtn.setOnClickListener {
-            operationBuilder?.executeOperation(OneArgumentOperationType.PERCENTAGE)
-        }
-        val equalBtn: Button = findViewById(R.id.simple_equal)
-        equalBtn.setOnClickListener {
-            operationBuilder?.executeOperation(TwoArgumentOperationType.RESULT)
+        val operationButtons = mapOf(
+            R.id.simple_clear to { operationBuilder?.clearInput() },
+            R.id.simple_clear_all to { operationBuilder?.clearData() },
+            R.id.simple_plus to { operationBuilder?.executeOperation(TwoArgumentOperationType.ADDITION) },
+            R.id.simple_minus to { operationBuilder?.executeOperation(TwoArgumentOperationType.SUBTRACTION) },
+            R.id.simple_multiply to { operationBuilder?.executeOperation(TwoArgumentOperationType.MULTIPLICATION) },
+            R.id.simple_divide to { operationBuilder?.executeOperation(TwoArgumentOperationType.DIVISION) },
+            R.id.simple_percent to { operationBuilder?.executeOperation(OneArgumentOperationType.PERCENTAGE) },
+            R.id.simple_equal to { operationBuilder?.executeOperation(TwoArgumentOperationType.RESULT) }
+        )
+
+        operationButtons.forEach { (id, operation) ->
+            val button: Button = findViewById(id)
+            button.setOnClickListener { operation() }
         }
     }
 
     private fun numericButtonsHandle() {
-        val oneBtn: Button = findViewById(R.id.simple_one)
-        oneBtn.setOnClickListener {
-            operationBuilder?.appendDigit('1')
-        }
-        val twoBtn: Button = findViewById(R.id.simple_two)
-        twoBtn.setOnClickListener {
-            operationBuilder?.appendDigit('2')
-        }
-        val threeBtn: Button = findViewById(R.id.simple_three)
-        threeBtn.setOnClickListener {
-            operationBuilder?.appendDigit('3')
-        }
-        val fourBtn: Button = findViewById(R.id.simple_four)
-        fourBtn.setOnClickListener {
-            operationBuilder?.appendDigit('4')
-        }
-        val fiveBtn: Button = findViewById(R.id.simple_five)
-        fiveBtn.setOnClickListener {
-            operationBuilder?.appendDigit('5')
-        }
-        val sixBtn: Button = findViewById(R.id.simple_six)
-        sixBtn.setOnClickListener {
-            operationBuilder?.appendDigit('6')
-        }
-        val sevenBtn: Button = findViewById(R.id.simple_seven)
-        sevenBtn.setOnClickListener {
-            operationBuilder?.appendDigit('7')
-        }
-        val eightBtn: Button = findViewById(R.id.simple_eight)
-        eightBtn.setOnClickListener {
-            operationBuilder?.appendDigit('8')
-        }
-        val nineBtn: Button = findViewById(R.id.simple_nine)
-        nineBtn.setOnClickListener {
-            operationBuilder?.appendDigit('9')
-        }
-        val zeroBtn: Button = findViewById(R.id.simple_zero)
-        zeroBtn.setOnClickListener {
-            operationBuilder?.appendDigit('0')
-        }
-        val pointBtn: Button = findViewById(R.id.simple_point)
-        pointBtn.setOnClickListener {
-            operationBuilder?.appendDigit('.')
-        }
-        val signBtn: Button = findViewById(R.id.simple_sign)
-        signBtn.setOnClickListener {
-            operationBuilder?.appendDigit('-')
+        val numericButtons = mapOf(
+            R.id.simple_one to '1',
+            R.id.simple_two to '2',
+            R.id.simple_three to '3',
+            R.id.simple_four to '4',
+            R.id.simple_five to '5',
+            R.id.simple_six to '6',
+            R.id.simple_seven to '7',
+            R.id.simple_eight to '8',
+            R.id.simple_nine to '9',
+            R.id.simple_zero to '0',
+            R.id.simple_point to '.',
+            R.id.simple_sign to '-'
+        )
+
+        numericButtons.forEach {(id, digit) ->
+            val button: Button = findViewById(id)
+            button.setOnClickListener {
+                operationBuilder?.appendDigit(digit)
+            }
         }
     }
 }

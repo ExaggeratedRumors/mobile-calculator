@@ -38,124 +38,55 @@ class ScientificCalculatorActivity : AppCompatActivity() {
     }
 
     private fun operationButtonsHandle() {
-        val clearBtn: Button = findViewById(R.id.scientific_clear)
-        clearBtn.setOnClickListener {
-            operationBuilder?.clearInput()
-        }
-        val clearAllBtn: Button = findViewById(R.id.scientific_clear_all)
-        clearAllBtn.setOnClickListener {
-            operationBuilder?.clearData()
-        }
-        val plusBtn: Button = findViewById(R.id.scientific_plus)
-        plusBtn.setOnClickListener {
-            operationBuilder?.executeOperation(TwoArgumentOperationType.ADDITION)
-        }
-        val minusBtn: Button = findViewById(R.id.scientific_minus)
-        minusBtn.setOnClickListener {
-            operationBuilder?.executeOperation(TwoArgumentOperationType.SUBTRACTION)
-        }
-        val multiplyBtn: Button = findViewById(R.id.scientific_multiply)
-        multiplyBtn.setOnClickListener {
-            operationBuilder?.executeOperation(TwoArgumentOperationType.MULTIPLICATION)
-        }
-        val divideBtn: Button = findViewById(R.id.scientific_divide)
-        divideBtn.setOnClickListener {
-            operationBuilder?.executeOperation(TwoArgumentOperationType.DIVISION)
-        }
-        val percentageBtn: Button = findViewById(R.id.scientific_percent)
-        percentageBtn.setOnClickListener {
-            operationBuilder?.executeOperation(OneArgumentOperationType.PERCENTAGE)
-        }
-        val equalBtn: Button = findViewById(R.id.scientific_equal)
-        equalBtn.setOnClickListener {
-            operationBuilder?.executeOperation(TwoArgumentOperationType.RESULT)
-        }
-        val squareBtn: Button = findViewById(R.id.scientific_sqrt)
-        squareBtn.setOnClickListener {
-            operationBuilder?.executeOperation(OneArgumentOperationType.SQRT)
-        }
-        val powerBtn: Button = findViewById(R.id.scientific_power)
-        powerBtn.setOnClickListener {
-            operationBuilder?.executeOperation(TwoArgumentOperationType.POWER)
-        }
-        val doubleBtn: Button = findViewById(R.id.scientific_double)
-        doubleBtn.setOnClickListener {
-            operationBuilder?.executeOperation(OneArgumentOperationType.DOUBLE)
-        }
-        val sinBtn: Button = findViewById(R.id.scientific_sin)
-        sinBtn.setOnClickListener {
-            operationBuilder?.executeOperation(OneArgumentOperationType.SIN)
-        }
-        val cosBtn: Button = findViewById(R.id.scientific_cos)
-        cosBtn.setOnClickListener {
-            operationBuilder?.executeOperation(OneArgumentOperationType.COS)
-        }
-        val tanBtn: Button = findViewById(R.id.scientific_tan)
-        tanBtn.setOnClickListener {
-            operationBuilder?.executeOperation(OneArgumentOperationType.TAN)
-        }
-        val logBtn: Button = findViewById(R.id.scientific_log)
-        logBtn.setOnClickListener {
-            operationBuilder?.executeOperation(TwoArgumentOperationType.LOG)
-        }
-        val lnBtn: Button = findViewById(R.id.scientific_ln)
-        lnBtn.setOnClickListener {
-            operationBuilder?.executeOperation(OneArgumentOperationType.LN)
-        }
-        val factorialBtn: Button = findViewById(R.id.scientific_factorial)
-        factorialBtn.setOnClickListener {
-            operationBuilder?.executeOperation(OneArgumentOperationType.FACTORIAL)
+        val operationButtons = mapOf(
+            R.id.scientific_clear to { operationBuilder?.clearInput() },
+            R.id.scientific_clear_all to { operationBuilder?.clearData() },
+            R.id.scientific_plus to { operationBuilder?.executeOperation(TwoArgumentOperationType.ADDITION) },
+            R.id.scientific_minus to { operationBuilder?.executeOperation(TwoArgumentOperationType.SUBTRACTION) },
+            R.id.scientific_multiply to { operationBuilder?.executeOperation(TwoArgumentOperationType.MULTIPLICATION) },
+            R.id.scientific_divide to { operationBuilder?.executeOperation(TwoArgumentOperationType.DIVISION) },
+            R.id.scientific_percent to { operationBuilder?.executeOperation(OneArgumentOperationType.PERCENTAGE) },
+            R.id.scientific_equal to { operationBuilder?.executeOperation(TwoArgumentOperationType.RESULT) },
+            R.id.scientific_sqrt to { operationBuilder?.executeOperation(OneArgumentOperationType.SQRT) },
+            R.id.scientific_power to { operationBuilder?.executeOperation(TwoArgumentOperationType.POWER) },
+            R.id.scientific_double to { operationBuilder?.executeOperation(OneArgumentOperationType.DOUBLE) },
+            R.id.scientific_sin to { operationBuilder?.executeOperation(OneArgumentOperationType.SIN) },
+            R.id.scientific_cos to { operationBuilder?.executeOperation(OneArgumentOperationType.COS) },
+            R.id.scientific_tan to { operationBuilder?.executeOperation(OneArgumentOperationType.TAN) },
+            R.id.scientific_log to { operationBuilder?.executeOperation(TwoArgumentOperationType.LOG) },
+            R.id.scientific_ln to { operationBuilder?.executeOperation(OneArgumentOperationType.LN) },
+            R.id.scientific_factorial to { operationBuilder?.executeOperation(OneArgumentOperationType.FACTORIAL) }
+        )
+
+        operationButtons.forEach { (id, operation) ->
+            val button: Button = findViewById(id)
+            button.setOnClickListener {
+                operation()
+            }
         }
     }
 
     private fun numericButtonsHandle() {
-        val oneBtn: Button = findViewById(R.id.scientific_one)
-        oneBtn.setOnClickListener {
-            operationBuilder?.appendDigit('1')
-        }
-        val twoBtn: Button = findViewById(R.id.scientific_two)
-        twoBtn.setOnClickListener {
-            operationBuilder?.appendDigit('2')
-        }
-        val threeBtn: Button = findViewById(R.id.scientific_three)
-        threeBtn.setOnClickListener {
-            operationBuilder?.appendDigit('3')
-        }
-        val fourBtn: Button = findViewById(R.id.scientific_four)
-        fourBtn.setOnClickListener {
-            operationBuilder?.appendDigit('4')
-        }
-        val fiveBtn: Button = findViewById(R.id.scientific_five)
-        fiveBtn.setOnClickListener {
-            operationBuilder?.appendDigit('5')
-        }
-        val sixBtn: Button = findViewById(R.id.scientific_six)
-        sixBtn.setOnClickListener {
-            operationBuilder?.appendDigit('6')
-        }
-        val sevenBtn: Button = findViewById(R.id.scientific_seven)
-        sevenBtn.setOnClickListener {
-            operationBuilder?.appendDigit('7')
-        }
-        val eightBtn: Button = findViewById(R.id.scientific_eight)
-        eightBtn.setOnClickListener {
-            operationBuilder?.appendDigit('8')
-        }
-        val nineBtn: Button = findViewById(R.id.scientific_nine)
-        nineBtn.setOnClickListener {
-            operationBuilder?.appendDigit('9')
-        }
-        val zeroBtn: Button = findViewById(R.id.scientific_zero)
-        zeroBtn.setOnClickListener {
-            operationBuilder?.appendDigit('0')
-        }
-        val pointBtn: Button = findViewById(R.id.scientific_point)
-        pointBtn.setOnClickListener {
-            operationBuilder?.appendDigit('.')
-        }
-        val signBtn: Button = findViewById(R.id.scientific_sign)
-        signBtn.setOnClickListener {
-            operationBuilder?.appendDigit('-')
+        val numericButtons = mapOf(
+            R.id.scientific_one to '1',
+            R.id.scientific_two to '2',
+            R.id.scientific_three to '3',
+            R.id.scientific_four to '4',
+            R.id.scientific_five to '5',
+            R.id.scientific_six to '6',
+            R.id.scientific_seven to '7',
+            R.id.scientific_eight to '8',
+            R.id.scientific_nine to '9',
+            R.id.scientific_zero to '0',
+            R.id.scientific_point to '.',
+            R.id.scientific_sign to '-'
+        )
+
+        numericButtons.forEach { (id, digit) ->
+            val button: Button = findViewById(id)
+            button.setOnClickListener {
+                operationBuilder?.appendDigit(digit)
+            }
         }
     }
 }
